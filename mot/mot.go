@@ -39,14 +39,6 @@ type client struct {
 	HeartbeatTimeout time.Duration
 }
 
-type ModuleConfig struct {
-	MessageQueueAdapter string      `json:"mq_adapter"`
-	MessageQueueConfigs interface{} `json:"mq_configs"`
-	CacheAdapter        string      `json:"cache_adapter"`
-	CacheConfigs        interface{} `json:"cache_configs"`
-	App
-}
-
 func New(moduleCode string, coreServerAddress ...string) error {
 	Client.moduleCode = moduleCode
 	// 核心模块地址
